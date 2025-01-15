@@ -3,20 +3,19 @@ import "./App.css";
 import Balance from "./components/Balance";
 import IncomeExpense from "./components/IncomeExpense";
 import TransactionList from "./components/TransactionList";
-import AddTransection from "./components/AddTransection";
-import { GlobalProvider } from "./context/GlobalState";
+import AddTransection from "./components/AddTransection"; 
 
 const App = () => {
-  return (
-    <GlobalProvider>
+  return ( 
+    <>
       <Header />
       <div className="conntainer">
       <Balance />
       <IncomeExpense />
       <TransactionList />
       <AddTransection />
-      </div>
-    </GlobalProvider>
+      </div> 
+    </>
   );
 };
 
