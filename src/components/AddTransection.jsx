@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import { GlobalContext } from "../context/GlobalState.jsx";
 
 const AddTransaction = () => {
   const [text, setText] = useState("");
