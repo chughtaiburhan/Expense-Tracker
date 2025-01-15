@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"; // Import PropTypes for validation
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState.jsx";
+import { useContext } from "react"; 
+import { GlobalContext } from "../context/GlobalContext";
 
 const Transaction = ({ transactions }) => {
   const {deleteTransaction}=useContext(GlobalContext);

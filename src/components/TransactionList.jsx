@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState.jsx"; // Ensure correct relative path
+import { useContext } from "react"; 
 import Transaction from "./Transaction";
+import { GlobalContext } from "../context/GlobalContext";
 
 const TransactionList = () => {
   const { transactions } = useContext(GlobalContext);

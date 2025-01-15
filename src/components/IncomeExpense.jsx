@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { GlobalContext } from "../context/GlobalState.jsx"
+import { useContext } from "react" 
+import { GlobalContext } from "../context/GlobalContext";
 
 
 const IncomeExpense = () => {

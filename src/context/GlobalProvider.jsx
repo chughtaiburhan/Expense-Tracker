@@ -1,32 +1,25 @@
-import { createContext, useReducer } from "react";
-import PropTypes from "prop-types"; // Import PropTypes for validation
+import   { useReducer } from "react";
+import PropTypes from "prop-types";
+import { GlobalContext, initialState } from "./GlobalContext"; // Import the context and initial state
 import AppReducer from "./AppReducer"; // Ensure the correct path to AppReducer
-
-// Initial State
-const initialState = {
-  transactions: [],
-};
-
-// Create Context
-export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  // Action
-  function deleteTransaction(id) {
+  // Actions
+  const deleteTransaction = (id) => {
     dispatch({
       type: "DELETE_TRANSACTION",
       payload: id,
     });
-  }
+  };
 
-  function addTransaction(transaction) {
+  const addTransaction = (transaction) => {
     dispatch({
       type: "ADD_TRANSACTION",
       payload: transaction,
     });
-  }
+  };
 
   return (
     <GlobalContext.Provider
@@ -34,7 +27,6 @@ export const GlobalProvider = ({ children }) => {
         transactions: state.transactions,
         deleteTransaction,
         addTransaction,
-        dispatch, // Pass dispatch if you want to use it in child components
       }}
     >
       {children}
@@ -42,7 +34,7 @@ export const GlobalProvider = ({ children }) => {
   );
 };
 
-// PropTypes validation for children prop
+// PropTypes validation
 GlobalProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Validate that children is a React node and required
+  children: PropTypes.node.isRequired,
 };
